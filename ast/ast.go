@@ -44,5 +44,7 @@ type Identifier struct {
 	Value string
 }
 
+// This is a simple test
+
 func (i *Identifier) expressionNode()      {}
 func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
