@@ -4,24 +4,24 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"monkey/lexer"
-	"monkey/token"
+	"monkey-go/lexer"
+	"monkey-go/token"
 )
 
-const PROMPT = ">>"
+const PROMPT = ">> "
 
 func Start(in io.Reader, out io.Writer) {
-	scanner := bufio.NewScanner(in)
+	Scanner := bufio.NewScanner(in)
 
 	for {
-		fmt.Println(PROMPT)
-		scanned := scanner.Scan()
+		fmt.Printf(PROMPT)
+		scanned := Scanner.Scan()
 
 		if !scanned {
 			return
 		}
 
-		line := scanner.Text()
+		line := Scanner.Text()
 		l := lexer.New(line)
 
 		for tok := l.NextToken(); tok.Type != token.EOF; tok = l.NextToken() {

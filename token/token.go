@@ -11,7 +11,7 @@ const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 
-	// Identifier + Literal
+	// Identifiers
 	IDENT = "IDENT"
 	INT   = "INT"
 
@@ -22,18 +22,17 @@ const (
 	BANG     = "!"
 	ASTERISK = "*"
 	SLASH    = "/"
-
-	LT = "<"
-	GT = ">"
+	LT       = "<"
+	GT       = ">"
 
 	// Delimeters
 	COMMA     = ","
 	SEMICOLON = ";"
 
-	LPAREN = "{"
-	RPAREN = "}"
-	LBRACE = "("
-	RBRACE = ")"
+	LPAREN = "("
+	RPAREN = ")"
+	LBRACE = "{"
+	RBRACE = "}"
 
 	// Keywords
 	FUNCTION = "FUNCTION"
@@ -48,7 +47,7 @@ const (
 	NOT_EQ = "!="
 )
 
-var Keywords = map[string]TokenType{
+var keywords = map[string]TokenType{
 	"fn":     FUNCTION,
 	"let":    LET,
 	"true":   TRUE,
@@ -58,8 +57,8 @@ var Keywords = map[string]TokenType{
 	"return": RETURN,
 }
 
-func LookUpIdent(ident string) TokenType {
-	if tok, ok := Keywords[ident]; ok {
+func LookupIndent(ident string) TokenType {
+	if tok, ok := keywords[ident]; ok {
 		return tok
 	}
 	return IDENT
