@@ -1,3 +1,3 @@
 # Monkey
 
-A programming Language written in go Lang
+A programming Language written in Go
