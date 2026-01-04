@@ -4,6 +4,7 @@ import (
 	"bat-go/evaluator"
 	"bat-go/lexer"
 	"bat-go/parser"
+	"bat-go/object"
 	"bufio"
 	"fmt"
 	"io"
@@ -27,6 +28,7 @@ const BAT_FACE = `
 
 func Start(in io.Reader, out io.Writer) {
 	Scanner := bufio.NewScanner(in)
+	env := object.NewEnvironment()
 
 	for {
 		fmt.Printf(PROMPT)
@@ -46,7 +48,7 @@ func Start(in io.Reader, out io.Writer) {
 			continue
 		}
 
-		evaluated := evaluator.Eval(program)
+		evaluated := evaluator.Eval(program, env)
 		if evaluated != nil {
 			io.WriteString(out, evaluated.Inspect())
 			io.WriteString(out, "\n")

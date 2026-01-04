@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"bat-go/repl"
+	"fmt"
 	"os"
 	"os/user"
 )
@@ -20,6 +20,6 @@ func main() {
 	}
 
 	fmt.Printf("Hello %s! This is the Bat programming language!\n", user.Username)
-	fmt.Printf("Feel free to type in commands\n")
+	fmt.Printf("REPL: Feel free to type in commands\n")
 	repl.Start(os.Stdin, os.Stdout)
 }
