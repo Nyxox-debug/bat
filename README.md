@@ -1,6 +1,6 @@
 # Bat 🦇
 
-A Simple programming Language written in Go, based on Writing an Interpreter in Go Book.
+A Simple programming Language written in Go, 
 
 ## Features
 
@@ -45,3 +45,5 @@ Type Bat code directly, for example:
         V    V         V          }' '\ /' '{          V         V    V
         '    '         '               V               '         '    '
 ```
+
+Ty Thorsten Ball
